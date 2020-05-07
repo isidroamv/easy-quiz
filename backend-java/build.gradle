@@ -1,0 +1,33 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.4.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.easy-quiz'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Whats the difference web is working fine
+	// implementation 'org.springframework.boot:spring-boot-starter'
+	// implementation 'org.springframework.security:spring-security-test'
+	// implementation "org.springframework.security:spring-security-web"
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation "org.springframework.boot:spring-boot-starter-security"
+	implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+	implementation "mysql:mysql-connector-java"
+	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+// TODO: work on test using jwt
+/*test {
+ 	useJUnitPlatform()
+}*/
